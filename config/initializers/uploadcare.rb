@@ -2,7 +2,7 @@ config_file = Rails.root.join('config', 'uploadcare.yml')
 
 config =
   if File.exist?(config_file)
-    YAML.load(ERB.new(File.new(config_file).read).result)
+    YAML.load(ERB.new(File.new(config_file).read).result, aliases: true)
   else
     # output warning in red color
     # use default settings just to boot up
